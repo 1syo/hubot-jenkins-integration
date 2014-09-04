@@ -13,10 +13,9 @@
 #
 # Author:
 #   TAKAHASHI Kazunari[@<org>]
-
 module.exports = (robot) ->
-  robot.respond /hello/, (msg) ->
-    msg.reply "hello!"
-
-  robot.hear /orly/, ->
-    msg.send "yarly"
+  robot.router.post "/#{robot.name}/jenkins/:room", (req, res) ->
+    try
+      res.end "[Jenkins] Sending message"
+    catch e
+      res.end "[Jenkins] #{e}"
