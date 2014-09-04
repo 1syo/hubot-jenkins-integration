@@ -1,0 +1,39 @@
+{
+  "name": "hubot-jenkins-notification",
+  "description": "A hubot script that does the things",
+  "version": "0.0.0",
+  "author": "TAKAHASHI Kazunari <takahashi@1syo.net>",
+  "license": "MIT",
+
+  "keywords": ["hubot","hubot-scripts"],
+
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/1syo/hubot-jenkins-notification.git"
+  },
+
+  "bugs": {
+    "url": "https://github.com/1syo/hubot-jenkins-notification/issues"
+  },
+
+  "dependencies": {
+    "coffee-script": "~1.7"
+  },
+
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*",
+    "sinon-chai": "*",
+    "sinon": "*",
+    "grunt-mocha-test": "*",
+    "grunt-release": "*",
+    "matchdep": "*",
+    "grunt-contrib-watch": "*"
+  },
+
+  "main": "index.coffee",
+
+  "scripts": {
+    "test": "grunt test"
+  }
+}
