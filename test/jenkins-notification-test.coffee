@@ -30,16 +30,16 @@ describe 'jenkins-notification', ->
         throw err if err
         done()
 
-  # it 'should be invalid', (done) ->
-  #   request(robot.router)
-  #     .post('/hubot/jenkins/general')
-  #     .set('Accept','application/x-www-form-urlencoded')
-  #     .send(payload: JSON.stringify(invalid_json))
-  #     .expect(200)
-  #     .end (err, res) ->
-  #       expect(res.text).match /\[Travis CI\] TypeError: Cannot .+ 'toLowerCase' of undefined/
-  #       throw err if err
-  #       done()
+  it 'should be invalid', (done) ->
+    request(robot.router)
+      .post('/hubot/jenkins/general')
+      .set('Accept','application/json')
+      .send(invalid_json)
+      .expect(200)
+      .end (err, res) ->
+        expect(res.text).match /\[Jenkins\] TypeError: Cannot read property 'number' of undefined/
+        throw err if err
+        done()
 
   afterEach ->
     robot.server.close()

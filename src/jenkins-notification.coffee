@@ -13,9 +13,12 @@
 #
 # Author:
 #   TAKAHASHI Kazunari[@<org>]
+Postman = require "./postman"
 module.exports = (robot) ->
   robot.router.post "/#{robot.name}/jenkins/:room", (req, res) ->
     try
+      postman = Postman.create(req, robot)
+      postman.deliver()
       res.end "[Jenkins] Sending message"
     catch e
       res.end "[Jenkins] #{e}"
