@@ -1,6 +1,6 @@
 # hubot-jenkins-notification
 
-A hubot script that does the things
+hubot-jenkins-notification script notify build status form jenkins notification plugin.
 
 See [`src/jenkins-notification.coffee`](src/jenkins-notification.coffee) for full documentation.
 
@@ -14,11 +14,4 @@ Then add **hubot-jenkins-notification** to your `external-scripts.json`:
 
 ```json
 ["hubot-jenkins-notification"]
-```
-
-## Sample Interaction
-
-```
-user1>> hubot hello
-hubot>> hello!
 ```

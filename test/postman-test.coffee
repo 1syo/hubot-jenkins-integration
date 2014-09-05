@@ -4,7 +4,6 @@ chai.use require 'sinon-chai'
 expect = chai.expect
 
 Postman = require '../src/postman'
-valid_json = require './fixtures/valid.json'
 
 describe 'Postman', ->
   describe 'Common', ->
