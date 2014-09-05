@@ -1,5 +1,5 @@
 # Description
-#   A hubot script that does the things
+#   Postman build a message from json.
 #
 class Base
   constructor: (@req, @robot) ->
@@ -20,13 +20,35 @@ class Base
   build_status: ->
     @json.build.status.toLowerCase()
 
+  build_phase: ->
+    @json.build.phase.toLowerCase()
+
+  finalized: ->
+    (@build_phase() == 'finalized')
+
+  deliverable: ->
+    (@build_phase() != 'completed')
+
+  status: ->
+    if @finalized()
+      " #{@build_status()}"
+    else
+      ""
+
+  url: ->
+    if @build_url()?
+      "\n#{@build_url()}"
+    else
+      ""
+
   message: ->
-    "[Jenkins] #{@name()} build ##{@build_number()} #{@build_status()}"
+    "[Jenkins] #{@name()} build #{@build_phase()} ##{@build_number()}#{@status()}#{@url()}"
 
 
 class Common extends Base
   deliver: ->
-    @robot.send {room: this.room()}, @message()
+    @robot.send {room: @room()}, @message()
+
 
 class Slack extends Base
   color: ->
@@ -38,8 +60,14 @@ class Slack extends Base
       else
         "#E3E4E6"
 
+  number: ->
+    if @build_url()?
+      "#{@build_url()}|##{@build_number()}"
+    else
+      "##{@build_number()}"
+
   text: ->
-    "[Jenkins] #{@name()} build ##{@build_url()|@build_number()} #{@build_status()}"
+    "[Jenkins] #{@name()} build #{@build_phase()} #{@number()}#{@status()}"
 
   payload: ->
     message:
