@@ -133,22 +133,22 @@ describe 'Postman', ->
         @robot = { adapterName: "slack" }
 
       it 'finalized message', ->
-          @req =
-            body:
-              name: 'test-build'
-              build: { full_url: 'http://jenkins.example.com/', phase: 'FINALIZED', status: 'SUCCESS', number: 14 }
+        @req =
+          body:
+            name: 'test-build'
+            build: { full_url: 'http://jenkins.example.com/', phase: 'FINALIZED', status: 'SUCCESS', number: 14 }
 
-          @postman = Postman.create(@req, @robot)
-          expect(@postman.text()).to.eq "[Jenkins] test-build build finalized http://jenkins.example.com/|#14 success"
+        @postman = Postman.create(@req, @robot)
+        expect(@postman.text()).to.eq "[Jenkins] test-build build finalized http://jenkins.example.com/|#14 success"
 
       it 'started message', ->
-          @req =
-            body:
-              name: 'test-build'
-              build: { full_url: 'http://jenkins.example.com/', phase: 'STARTED', number: 14 }
+        @req =
+          body:
+            name: 'test-build'
+            build: { full_url: 'http://jenkins.example.com/', phase: 'STARTED', number: 14 }
 
-          @postman = Postman.create(@req, @robot)
-          expect(@postman.text()).to.eq "[Jenkins] test-build build started http://jenkins.example.com/|#14"
+        @postman = Postman.create(@req, @robot)
+        expect(@postman.text()).to.eq "[Jenkins] test-build build started http://jenkins.example.com/|#14"
 
     describe '#deliver', ->
       beforeEach ->
