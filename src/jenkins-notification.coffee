@@ -1,24 +1,21 @@
 # Description
-#   A hubot script that does the things
-#
-# Configuration:
-#   LIST_OF_ENV_VARS_TO_SET
-#
-# Commands:
-#   hubot hello - <what the respond trigger does>
-#   orly - <what the hear trigger does>
+#   hubot-jenkins-notification script notify build status form jenkins notification plugin.
 #
 # Notes:
-#   <optional notes required for the script>
+#   Slack attachment support with slack adapter.
 #
 # Author:
-#   TAKAHASHI Kazunari[@<org>]
+#   TAKAHASHI Kazunari[takahashi@1syo.net]
+
 Postman = require "./postman"
 module.exports = (robot) ->
   robot.router.post "/#{robot.name}/jenkins/:room", (req, res) ->
     try
       postman = Postman.create(req, robot)
-      postman.deliver()
-      res.end "[Jenkins] Sending message"
+      if postman.deliverable()
+        postman.deliver()
+        res.end "[Jenkins] Sending message"
+      else
+        res.end ""
     catch e
       res.end "[Jenkins] #{e}"
