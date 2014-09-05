@@ -1,5 +1,5 @@
 # hubot-jenkins-notification
-[![Build Status](http://img.shields.io/travis/1syo/hubot-jenkins-notification.svg?style=flat)](https://travis-ci.org/1syo/hubot-jenkins-notification)
+[![wercker status](https://app.wercker.com/status/add43f567e82d4d271dc36fb31c23c49/s/master "wercker status")](https://app.wercker.com/project/bykey/add43f567e82d4d271dc36fb31c23c49)
 [![Coverage Status](http://img.shields.io/coveralls/1syo/hubot-jenkins-notification.svg?style=flat)](https://coveralls.io/r/1syo/hubot-jenkins-notification)
 [![Dependencies Status](http://img.shields.io/david/1syo/hubot-jenkins-notification.svg?style=flat)](https://david-dm.org/1syo/hubot-jenkins-notification)
 
