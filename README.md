@@ -18,3 +18,19 @@ Then add **hubot-jenkins-notification** to your `external-scripts.json`:
 ```json
 ["hubot-jenkins-notification"]
 ```
+
+## Note
+
+If you use slack adapter then your message use Slack attachments.
+
+### Slack
+
+...
+
+### Slack with IRC (fallback)
+
+...
+
+### Hipchat
+
+...

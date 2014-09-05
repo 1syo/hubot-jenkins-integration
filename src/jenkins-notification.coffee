@@ -2,7 +2,7 @@
 #   hubot-jenkins-notification script notify build status form jenkins notification plugin.
 #
 # Notes:
-#   Slack attachment support with slack adapter.
+#   If you use slack adapter then your message use slack attachments.
 #
 # Author:
 #   TAKAHASHI Kazunari[takahashi@1syo.net]
