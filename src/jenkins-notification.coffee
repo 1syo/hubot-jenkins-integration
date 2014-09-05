@@ -1,8 +1,20 @@
 # Description
-#   hubot-jenkins-notification script notify build status form jenkins notification plugin.
+#   A hubot script that notify build status from jenkins notification plugin.
+#
+# Dependencies:
+#   None
+#
+# Configuration:
+#   None
+#
+# Commands:
+#   None
+#
+# URLS:
+#   POST /<hubot>/travisci/<room>
 #
 # Notes:
-#   If you use slack adapter then your message use slack attachments.
+#   See also: https://wiki.jenkins-ci.org/display/JENKINS/Notification+Plugin
 #
 # Author:
 #   TAKAHASHI Kazunari[takahashi@1syo.net]

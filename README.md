@@ -3,9 +3,7 @@
 [![Coverage Status](http://img.shields.io/coveralls/1syo/hubot-jenkins-notification.svg?style=flat)](https://coveralls.io/r/1syo/hubot-jenkins-notification)
 [![Dependencies Status](http://img.shields.io/david/1syo/hubot-jenkins-notification.svg?style=flat)](https://david-dm.org/1syo/hubot-jenkins-notification)
 
-hubot-jenkins-notification script notify build status form jenkins notification plugin.
-
-See [`src/jenkins-notification.coffee`](src/jenkins-notification.coffee) for full documentation.
+A hubot script that notify build status from jenkins notification plugin.
 
 ## Installation
 
@@ -19,7 +17,18 @@ Then add **hubot-jenkins-notification** to your `external-scripts.json`:
 ["hubot-jenkins-notification"]
 ```
 
-## Note
+## Jenkins configuration
+
+Install notification plugin to your Jenkins  
+And add new endpoint in your project.
+- Format: JSON
+- Protcol: http
+- URL: <hubot host>:<hubot port>/<hubot name>/jenkins/<room>
+
+See also:  
+https://wiki.jenkins-ci.org/display/JENKINS/Notification+Plugin  
+
+## Message examples
 
 If you use slack adapter then your message use Slack attachments.
 

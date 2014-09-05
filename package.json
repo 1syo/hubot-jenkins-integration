@@ -1,6 +1,6 @@
 {
   "name": "hubot-jenkins-notification",
-  "description": "hubot-jenkins-notification script notify build status form jenkins notification plugin.",
+  "description": "A hubot script that notify build status from jenkins notification plugin.",
   "version": "1.0.0",
   "author": "TAKAHASHI Kazunari <takahashi@1syo.net>",
   "license": "MIT",
