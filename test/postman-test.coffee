@@ -44,6 +44,11 @@ describe 'Postman', ->
         @postman = Postman.create(@req, @robot)
         expect(@postman.finalized()).to.eq true
 
+      it 'true with finished', ->
+        @req = body: { build: { phase: 'FINISHED' } }
+        @postman = Postman.create(@req, @robot)
+        expect(@postman.finalized()).to.eq true
+
       it 'false', ->
         @req = body: { build: {  phase: 'STARTED' } }
         @postman = Postman.create(@req, @robot)

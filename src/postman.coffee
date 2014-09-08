@@ -24,7 +24,7 @@ class Base
     @json.build.phase.toLowerCase()
 
   finalized: ->
-    (@build_phase() == 'finalized')
+    (@build_phase() == 'finalized' || @build_phase() == 'finished')
 
   deliverable: ->
     (@build_phase() != 'completed')
