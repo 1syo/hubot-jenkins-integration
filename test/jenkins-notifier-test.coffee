@@ -16,7 +16,7 @@ describe 'jenkins-integration', ->
   beforeEach (done) ->
     robot = new Robot null, 'mock-adapter', yes, 'hubot'
     robot.adapter.on 'connected', ->
-      require("../src/jenkins-integration")(robot)
+      require("../src/jenkins-notifier")(robot)
       adapter = @robot.adapter
       done()
     robot.run()

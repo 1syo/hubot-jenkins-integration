@@ -1,5 +1,5 @@
 {
-  "name": "hubot-jenkins-integration",
+  "name": "hubot-jenkins-notifier",
   "description": "A hubot script that notify build status from jenkins notification plugin.",
   "version": "1.0.0",
   "author": "TAKAHASHI Kazunari <takahashi@1syo.net>",
@@ -9,11 +9,11 @@
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/1syo/hubot-jenkins-integration.git"
+    "url": "git://github.com/1syo/hubot-jenkins-notifier.git"
   },
 
   "bugs": {
-    "url": "https://github.com/1syo/hubot-jenkins-integration/issues"
+    "url": "https://github.com/1syo/hubot-jenkins-notifier/issues"
   },
 
   "dependencies": {
