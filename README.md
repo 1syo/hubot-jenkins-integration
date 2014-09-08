@@ -21,25 +21,25 @@ Then add **hubot-jenkins-notifier** to your `external-scripts.json`:
 
 Install notification plugin to your Jenkins  
 And add new endpoint in your project.
-- Format: JSON
-- Protcol: http
-- URL: <hubot host>:<hubot port>/<hubot name>/jenkins/<room>
+- Format: ``JSON``
+- Protcol: ``http``
+- URL: ``<hubot host>:<hubot port>/<hubot name>/jenkins/<room>``
 
 See also:  
 https://wiki.jenkins-ci.org/display/JENKINS/Notification+Plugin  
 
-## Message examples
+## Notification examples
 
 If you use slack adapter then your message use Slack attachments.
 
-### Slack
+### Slack Adapter
 
-...
+![](https://raw.githubusercontent.com/wiki/1syo/hubot-jenkins-notifier/slack.png)
 
-### Slack with IRC (fallback)
+### Slack Adapter (fallback)
 
-...
+![](https://raw.githubusercontent.com/wiki/1syo/hubot-jenkins-notifier/slack-fallback.png)
 
-### Hipchat
+### Shell Adapter
 
-...
+![](https://raw.githubusercontent.com/wiki/1syo/hubot-jenkins-notifier/shell.png)
