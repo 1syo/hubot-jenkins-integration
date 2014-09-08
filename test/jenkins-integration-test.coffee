@@ -11,12 +11,12 @@ completed = require './fixtures/completed.json'
 started = require './fixtures/started.json'
 invalid = require './fixtures/invalid.json'
 
-describe 'jenkins-notification', ->
+describe 'jenkins-integration', ->
   robot = null
   beforeEach (done) ->
     robot = new Robot null, 'mock-adapter', yes, 'hubot'
     robot.adapter.on 'connected', ->
-      require("../src/jenkins-notification")(robot)
+      require("../src/jenkins-integration")(robot)
       adapter = @robot.adapter
       done()
     robot.run()

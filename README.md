@@ -1,7 +1,7 @@
-# hubot-jenkins-notification
+# hubot-jenkins-integration
 [![wercker status](https://app.wercker.com/status/add43f567e82d4d271dc36fb31c23c49/s/master "wercker status")](https://app.wercker.com/project/bykey/add43f567e82d4d271dc36fb31c23c49)
-[![Coverage Status](http://img.shields.io/coveralls/1syo/hubot-jenkins-notification.svg?style=flat)](https://coveralls.io/r/1syo/hubot-jenkins-notification)
-[![Dependencies Status](http://img.shields.io/david/1syo/hubot-jenkins-notification.svg?style=flat)](https://david-dm.org/1syo/hubot-jenkins-notification)
+[![Coverage Status](http://img.shields.io/coveralls/1syo/hubot-jenkins-integration.svg?style=flat)](https://coveralls.io/r/1syo/hubot-jenkins-integration)
+[![Dependencies Status](http://img.shields.io/david/1syo/hubot-jenkins-integration.svg?style=flat)](https://david-dm.org/1syo/hubot-jenkins-integration)
 
 A hubot script that notify build status from jenkins notification plugin.
 
@@ -9,12 +9,12 @@ A hubot script that notify build status from jenkins notification plugin.
 
 In hubot project repo, run:
 
-`npm install hubot-jenkins-notification --save`
+`npm install hubot-jenkins-integration --save`
 
-Then add **hubot-jenkins-notification** to your `external-scripts.json`:
+Then add **hubot-jenkins-integration** to your `external-scripts.json`:
 
 ```json
-["hubot-jenkins-notification"]
+["hubot-jenkins-integration"]
 ```
 
 ## Jenkins configuration

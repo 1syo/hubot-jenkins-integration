@@ -11,7 +11,7 @@
 #   None
 #
 # URLS:
-#   POST /<hubot>/travisci/<room>
+#   POST /<hubot>/jenkins/<room>
 #
 # Notes:
 #   See also: https://wiki.jenkins-ci.org/display/JENKINS/Notification+Plugin
