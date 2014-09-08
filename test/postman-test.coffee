@@ -28,7 +28,7 @@ describe 'Postman', ->
       it 'full_url defined', ->
         @req = body: { build: { full_url: 'http://jenkins.example.com/' } }
         @postman = Postman.create(@req, @robot)
-        expect(@postman.url()).to.eq "\nhttp://jenkins.example.com/"
+        expect(@postman.url()).to.eq " (http://jenkins.example.com/)"
 
       it 'full_url undefined', ->
         @req = body: { build: { } }
@@ -64,7 +64,7 @@ describe 'Postman', ->
         expect(@postman.deliverable()).to.eq true
 
       it 'false', ->
-        @req = body: { build: {  phase: 'COMPLETED' } }
+        @req = body: { build: { phase: 'COMPLETED' } }
         @postman = Postman.create(@req, @robot)
         expect(@postman.deliverable()).to.eq false
 
@@ -79,7 +79,7 @@ describe 'Postman', ->
         @postman = Postman.create(@req, @robot)
 
       it 'return message', ->
-        expect(@postman.message()).to.eq "[Jenkins] test-build build finalized #12 failure\nhttp://jenkins.example.com/"
+        expect(@postman.message()).to.eq "[Jenkins] test-build build finalized #12 failure (http://jenkins.example.com/)"
 
     describe '#deliver', ->
       beforeEach ->

@@ -37,7 +37,7 @@ class Base
 
   url: ->
     if @build_url()?
-      "\n#{@build_url()}"
+      " (#{@build_url()})"
     else
       ""
 
