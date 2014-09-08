@@ -18,7 +18,7 @@ class Base
     @json.build.number
 
   build_status: ->
-    @json.build.status.toLowerCase()
+    @json.build.status?.toLowerCase()
 
   build_phase: ->
     @json.build.phase.toLowerCase()
