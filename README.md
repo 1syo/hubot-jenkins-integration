@@ -30,7 +30,7 @@ https://wiki.jenkins-ci.org/display/JENKINS/Notification+Plugin
 
 ## Notification examples
 
-If you use slack adapter then your message use Slack attachments.
+If you use slack adapter then your notice use Slack attachments.
 
 ### Slack Adapter
 

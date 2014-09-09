@@ -1,5 +1,5 @@
 # Description
-#   Postman build a message from json.
+#   Postman build a notice from json.
 #
 class Base
   constructor: (@req, @robot) ->
@@ -26,7 +26,7 @@ class Base
   finalized: ->
     (@build_phase() == 'finalized' || @build_phase() == 'finished')
 
-  deliverable: ->
+  notifiable: ->
     (@build_phase() != 'completed')
 
   status: ->
@@ -41,13 +41,13 @@ class Base
     else
       ""
 
-  message: ->
+  notice: ->
     "[Jenkins] #{@name()} build #{@build_phase()} ##{@build_number()}#{@status()}#{@url()}"
 
 
 class Common extends Base
-  deliver: ->
-    @robot.send {room: @room()}, @message()
+  notify: ->
+    @robot.send {room: @room()}, @notice()
 
 
 class Slack extends Base
@@ -75,10 +75,10 @@ class Slack extends Base
     content:
       text: @text()
       color: @color()
-      fallback: @message()
+      fallback: @notice()
       pretext: ""
 
-  deliver: ->
+  notify: ->
     @robot.emit 'slack-attachment', @payload()
 
 
