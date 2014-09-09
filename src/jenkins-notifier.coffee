@@ -24,8 +24,8 @@ module.exports = (robot) ->
   robot.router.post "/#{robot.name}/jenkins/:room", (req, res) ->
     try
       postman = Postman.create(req, robot)
-      if postman.deliverable()
-        postman.deliver()
+      if postman.notifiable()
+        postman.notify()
         res.end "[Jenkins] Sending message"
       else
         res.end ""

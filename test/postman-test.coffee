@@ -54,21 +54,21 @@ describe 'Postman', ->
         @postman = Postman.create(@req, @robot)
         expect(@postman.finalized()).to.eq false
 
-    describe '#deliverable', ->
+    describe '#notifiable', ->
       beforeEach ->
         @robot = { adapterName: "shell" }
 
       it 'true', ->
         @req = body: { build: { phase: 'FINALIZED' } }
         @postman = Postman.create(@req, @robot)
-        expect(@postman.deliverable()).to.eq true
+        expect(@postman.notifiable()).to.eq true
 
       it 'false', ->
         @req = body: { build: { phase: 'COMPLETED' } }
         @postman = Postman.create(@req, @robot)
-        expect(@postman.deliverable()).to.eq false
+        expect(@postman.notifiable()).to.eq false
 
-    describe '#message', ->
+    describe '#notice', ->
       beforeEach ->
         @req =
           body:
@@ -78,10 +78,10 @@ describe 'Postman', ->
         @robot = { adapterName: "shell" }
         @postman = Postman.create(@req, @robot)
 
-      it 'return message', ->
-        expect(@postman.message()).to.eq "[Jenkins] test-build build finalized #12 failure (http://jenkins.example.com/)"
+      it 'return notice', ->
+        expect(@postman.notice()).to.eq "[Jenkins] test-build build finalized #12 failure (http://jenkins.example.com/)"
 
-    describe '#deliver', ->
+    describe '#notify', ->
       beforeEach ->
         @req =
           params:
@@ -92,11 +92,11 @@ describe 'Postman', ->
 
         @robot = { adapterName: "shell", send: sinon.spy() }
         @postman = Postman.create(@req, @robot)
-        @postman.deliver()
+        @postman.notify()
 
       it 'call #send with args', ->
         expect(@robot.send).to.have.been.calledWith(
-          {room: @postman.room()}, @postman.message()
+          {room: @postman.room()}, @postman.notice()
         )
 
   describe 'Slack', ->
@@ -155,7 +155,7 @@ describe 'Postman', ->
         @postman = Postman.create(@req, @robot)
         expect(@postman.text()).to.eq "[Jenkins] test-build build started http://jenkins.example.com/|#14"
 
-    describe '#deliver', ->
+    describe '#notify', ->
       beforeEach ->
         @req =
           params:
@@ -166,7 +166,7 @@ describe 'Postman', ->
 
         @robot = { adapterName: "slack", emit: sinon.spy() }
         @postman = Postman.create(@req, @robot)
-        @postman.deliver()
+        @postman.notify()
 
       it 'call #emit with args', ->
         expect(@robot.emit).to.have.been.calledWith(
@@ -195,7 +195,7 @@ describe 'Postman', ->
         expect(@postman.payload().content.color).to.eq @postman.color()
 
       it '.content.fallback', ->
-        expect(@postman.payload().content.fallback).to.eq @postman.message()
+        expect(@postman.payload().content.fallback).to.eq @postman.notice()
 
       it '.content.pretext', ->
         expect(@postman.payload().content.pretext).to.eq ""
